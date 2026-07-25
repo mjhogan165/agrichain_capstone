@@ -1,0 +1,51 @@
+complaint_id,timestamp,customer_id,channel,complaint_text,category,priority,supplier_id,product_category,region,order_id
+CMP-000001,2024-11-01 00:00:00,CUST-2091,web,Shipment ORD-965472 stuck in transit for 7 days. This is causing major disruptions to our supply chain.,Delivery Delay,medium,SUP-12850,tomatoes,Asia,ORD-965472
+CMP-000002,2024-11-01 14:12:14,CUST-1565,email,Paperwork for shipment ORD-272769 has wrong product codes. This is delaying our processing.,Documentation Error,medium,SUP-12632,bell peppers,Europe,ORD-272769
+CMP-000003,2024-11-02 04:24:29,CUST-1860,social,Quality of mangoes in order ORD-463541 is substandard. Items are not fresh as promised.,Quality Issues,high,SUP-10371,lemons,Europe,ORD-463541
+CMP-000004,2024-11-02 18:36:44,CUST-2215,social,Order ORD-609763 missing items. Expected 187 but received only 66 mangoes.,Missing Items,high,SUP-11305,cherries,Asia,ORD-609763
+CMP-000005,2024-11-03 08:48:58,CUST-1723,web,"Damaged goods in shipment ORD-255544. Temperature control appears to have failed, cucumbers are spoiled.",Damaged Goods,high,SUP-12411,limes,Asia,ORD-255544
+CMP-000006,2024-11-03 23:01:13,CUST-1487,email,Received order ORD-269087 with 48% of avocados damaged. Packaging was inadequate.,Damaged Goods,critical,SUP-10452,avocados,Europe,ORD-269087
+CMP-000007,2024-11-04 13:13:28,CUST-1763,social,Service quality is deteriorating. Multiple issues with order ORD-255130 and no one seems to care.,Service Complaint,low,SUP-6278,organic apples,North America,ORD-255130
+CMP-000008,2024-11-05 03:25:42,CUST-2998,web,"Terrible communication regarding shipment ORD-672675. No tracking updates, no responses to calls.",Poor Communication,high,SUP-8923,asparagus,Asia,ORD-672675
+CMP-000009,2024-11-05 17:37:57,CUST-2388,email,Order ORD-246195 is severely delayed. We needed these organic apples by 2025-10-31 for our retail operations.,Delivery Delay,medium,SUP-9779,carrots,Asia,ORD-246195
+CMP-000010,2024-11-06 07:50:12,CUST-2916,web,Paperwork for shipment ORD-919234 has wrong product codes. This is delaying our processing.,Documentation Error,low,SUP-6592,broccoli,Europe,ORD-919234
+CMP-000011,2024-11-06 22:02:26,CUST-2239,email,Received only partial order ORD-732471. Where are the remaining 29 raspberries?,Missing Items,medium,SUP-8650,cherries,North America,ORD-732471
+CMP-000012,2024-11-07 12:14:41,CUST-1441,social,Unacceptable behavior from your team handling order ORD-191853. Need to speak with a manager.,Service Complaint,critical,SUP-5705,bell peppers,Asia,ORD-191853
+CMP-000013,2024-11-08 02:26:56,CUST-1972,web,Delivery driver for order ORD-417960 was extremely rude and unprofessional.,Service Complaint,medium,SUP-8785,watermelons,North America,ORD-417960
+CMP-000014,2024-11-08 16:39:11,CUST-2873,app,Order ORD-891930 contains cucumbers that are already showing signs of spoilage upon arrival.,Quality Issues,critical,SUP-8796,oranges,Asia,ORD-891930
+CMP-000015,2024-11-09 06:51:25,CUST-1005,app,Quality issue with order ORD-929653. The mangoes show signs of improper handling during transport.,Damaged Goods,high,SUP-10282,oranges,Asia,ORD-929653
+CMP-000016,2024-11-09 21:03:40,CUST-2566,web,Shipment ORD-225152 stuck in transit for 11 days. This is causing major disruptions to our supply chain.,Delivery Delay,medium,SUP-12981,watermelons,Asia,ORD-225152
+CMP-000017,2024-11-10 11:15:55,CUST-2049,email,Quality issue with order ORD-491330. The cucumbers show signs of improper handling during transport.,Damaged Goods,medium,SUP-7233,blueberries,Europe,ORD-491330
+CMP-000018,2024-11-11 01:28:09,CUST-2867,web,My order #ORD-767153 was supposed to arrive on 2025-10-28 but it's now 6 days late. This is unacceptable for perishable goods.,Delivery Delay,medium,SUP-11165,cucumbers,North America,ORD-767153
+CMP-000019,2024-11-11 15:40:24,CUST-2786,web,Quality issue with order ORD-438277. The grapes show signs of improper handling during transport.,Damaged Goods,high,SUP-7305,blueberries,Europe,ORD-438277
+CMP-000020,2024-11-12 05:52:39,CUST-1696,app,My order #ORD-532007 was supposed to arrive on 2025-10-27 but it's now 4 days late. This is unacceptable for perishable goods.,Delivery Delay,medium,SUP-9514,watermelons,Asia,ORD-532007
+CMP-000021,2024-11-12 20:04:53,CUST-1943,email,Order ORD-537619 is incomplete. Missing 27 units of pears.,Missing Items,high,SUP-12288,garlic,North America,ORD-537619
+CMP-000022,2024-11-13 10:17:08,CUST-2986,web,Shipment ORD-900681 arrived with crushed boxes. Multiple watermelons units are unsellable.,Damaged Goods,high,SUP-6026,bananas,Asia,ORD-900681
+CMP-000023,2024-11-14 00:29:23,CUST-1870,email,Missing certificates for order ORD-182423. Cannot clear customs without proper documentation.,Documentation Error,medium,SUP-9206,onions,Asia,ORD-182423
+CMP-000024,2024-11-14 14:41:37,CUST-1243,web,Received order ORD-591868 with 68% of tomatoes damaged. Packaging was inadequate.,Damaged Goods,low,SUP-6513,limes,Europe,ORD-591868
+CMP-000025,2024-11-15 04:53:52,CUST-1185,app,Documentation error on order ORD-130680. Invoice doesn't match packing list.,Documentation Error,low,SUP-5811,pears,North America,ORD-130680
+CMP-000026,2024-11-15 19:06:07,CUST-1028,app,Paperwork for shipment ORD-900319 has wrong product codes. This is delaying our processing.,Documentation Error,medium,SUP-6516,kale,North America,ORD-900319
+CMP-000027,2024-11-16 09:18:22,CUST-1370,web,Unacceptable behavior from your team handling order ORD-212537. Need to speak with a manager.,Service Complaint,medium,SUP-9257,bell peppers,Europe,ORD-212537
+CMP-000028,2024-11-16 23:30:36,CUST-1739,web,Service quality is deteriorating. Multiple issues with order ORD-899301 and no one seems to care.,Service Complaint,medium,SUP-7555,limes,Europe,ORD-899301
+CMP-000029,2024-11-17 13:42:51,CUST-2134,social,"Terrible communication regarding shipment ORD-336845. No tracking updates, no responses to calls.",Poor Communication,low,SUP-9027,limes,Asia,ORD-336845
+CMP-000030,2024-11-18 03:55:06,CUST-1897,email,Invoice ORD-515623 shows incorrect pricing. We were quoted $1882 but charged $2118.,Pricing Error,medium,SUP-7774,bananas,North America,ORD-515623
+CMP-000031,2024-11-18 18:07:20,CUST-1827,email,Paperwork for shipment ORD-985029 has wrong product codes. This is delaying our processing.,Documentation Error,critical,SUP-10274,raspberries,Europe,ORD-985029
+CMP-000032,2024-11-19 08:19:35,CUST-2365,social,Been waiting 4 days for update on order ORD-598940. This lack of communication is unprofessional.,Poor Communication,low,SUP-10147,bell peppers,Asia,ORD-598940
+CMP-000033,2024-11-19 22:31:50,CUST-2511,email,Invoice ORD-204441 shows incorrect pricing. We were quoted $3178 but charged $3689.,Pricing Error,medium,SUP-10105,lettuce,Asia,ORD-204441
+CMP-000034,2024-11-20 12:44:04,CUST-2539,social,"Damaged goods in shipment ORD-793193. Temperature control appears to have failed, bananas are spoiled.",Damaged Goods,medium,SUP-9477,organic apples,Asia,ORD-793193
+CMP-000035,2024-11-21 02:56:19,CUST-2802,email,"Damaged goods in shipment ORD-551313. Temperature control appears to have failed, kale are spoiled.",Damaged Goods,medium,SUP-11384,mangoes,North America,ORD-551313
+CMP-000036,2024-11-21 17:08:34,CUST-2006,social,Shipment ORD-272117 arrived with crushed boxes. Multiple mangoes units are unsellable.,Damaged Goods,medium,SUP-9418,onions,Europe,ORD-272117
+CMP-000037,2024-11-22 07:20:48,CUST-2151,app,Critical delay on order ORD-599028. The fresh strawberries were time-sensitive and now may be unusable.,Delivery Delay,low,SUP-7625,fresh strawberries,Asia,ORD-599028
+CMP-000038,2024-11-22 21:33:03,CUST-1092,app,Customer service rep was very unprofessional when I called about order ORD-719145.,Service Complaint,medium,SUP-8374,blueberries,Asia,ORD-719145
+CMP-000039,2024-11-23 11:45:18,CUST-1500,app,Shipment ORD-793360 arrived with crushed boxes. Multiple lemons units are unsellable.,Damaged Goods,high,SUP-9410,avocados,Asia,ORD-793360
+CMP-000040,2024-11-24 01:57:33,CUST-2347,social,"Order ORD-583298 completely ruined. carrots arrived in terrible condition, cannot be sold.",Damaged Goods,critical,SUP-9672,raspberries,Europe,ORD-583298
+CMP-000041,2024-11-24 16:09:47,CUST-1200,social,Quality of watermelons in order ORD-700350 is substandard. Items are not fresh as promised.,Quality Issues,medium,SUP-7976,spinach,Asia,ORD-700350
+CMP-000042,2024-11-25 06:22:02,CUST-2301,email,Invoice ORD-621091 has wrong prices for bananas. This needs immediate correction.,Pricing Error,high,SUP-10879,cherries,North America,ORD-621091
+CMP-000043,2024-11-25 20:34:17,CUST-2212,web,Customer service rep was very unprofessional when I called about order ORD-199335.,Service Complaint,medium,SUP-9134,peaches,Europe,ORD-199335
+CMP-000044,2024-11-26 10:46:31,CUST-2358,web,Shipment ORD-553939 short by 37 items. Packing list doesn't match actual delivery.,Missing Items,medium,SUP-10143,watermelons,North America,ORD-553939
+CMP-000045,2024-11-27 00:58:46,CUST-2181,social,Poor service experience with shipment ORD-295600. Staff was unhelpful and dismissive.,Service Complaint,low,SUP-10134,fresh strawberries,North America,ORD-295600
+CMP-000046,2024-11-27 15:11:01,CUST-1746,social,Poor service experience with shipment ORD-310394. Staff was unhelpful and dismissive.,Service Complaint,medium,SUP-8378,grapes,Europe,ORD-310394
+CMP-000047,2024-11-28 05:23:15,CUST-1328,web,Incomplete delivery for ORD-777424. 14 cases of oranges are missing from the shipment.,Missing Items,medium,SUP-8802,broccoli,North America,ORD-777424
+CMP-000048,2024-11-28 19:35:30,CUST-1864,email,Shipment ORD-557318 arrived with crushed boxes. Multiple cucumbers units are unsellable.,Damaged Goods,medium,SUP-12895,cantaloupe,Europe,ORD-557318
+CMP-000049,2024-11-29 09:47:45,CUST-1040,email,Received order ORD-920231 with 75% of avocados damaged. Packaging was inadequate.,Damaged Goods,medium,SUP-10932,pears,Asia,ORD-920231
+CMP-000050,2024-11-30 00:00:00,CUST-1229,email,Quality control failure on order ORD-347507. limes are contaminated and cannot be sold.,Quality Issues,high,SUP-7697,pears,North America,ORD-347507
