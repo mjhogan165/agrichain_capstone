@@ -14,7 +14,6 @@ Instead, everything imports `load_complaints()` from here.
 import pandas as pd
 from pathlib import Path
 
-
 # Path handling note: we use Path(__file__).parent instead of a hardcoded
 # string like "data/raw/..." because a hardcoded relative path only works
 # if you run the script from exactly one folder. Path(__file__) always
@@ -23,28 +22,43 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]  # src/data -> src -> project
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw"
 
 
+def load_csv(filepath) -> pd.DataFrame:
+    """
+    General-purpose CSV loader. Parses 'timestamp' as a real datetime
+    if that column exists in the file.
+
+    Parameters
+    ----------
+    filepath : str or Path
+        Full path to the CSV file to load.
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    return pd.read_csv(filepath, parse_dates=["timestamp"])
+
+
 def load_complaints(split: str = "train") -> pd.DataFrame:
     """
-       Load either the train or test complaints CSV.
+    Load either the train or test complaints CSV, from this project's
+    known data/raw/ folder and complaints_{split}.csv naming pattern.
 
-       Parameters
-       ----------
-       split : str
-           Either "train" or "test".
+    Parameters
+    ----------
+    split : str
+        Either "train" or "test".
 
-       Returns
-    -------------
-       pd.DataFrame
-           The raw complaints data, with timestamp parsed as a real datetime
-           (not a string) so we can do date-based analysis later.
+    Returns
+    -------
+    pd.DataFrame
+        The raw complaints data, with timestamp parsed as a real datetime.
     """
     if split not in ("train", "test"):
         raise ValueError(f"split must be 'train' or 'test', got '{split}'")
 
     file_path = RAW_DATA_DIR / f"complaints_{split}.csv"
-    df = pd.read_csv(file_path, parse_dates=["timestamp"])
-    return df
-
+    return load_csv(file_path)
 
 
 if __name__ == "__main__":
