@@ -7,7 +7,7 @@ project instructions - normalization and stopword removal.
 
 import string
 import nltk
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords, words
 
 # NLTK's stopword list needs to be downloaded once per machine - this
 # checks if it's already there first, so it doesn't re-download every
@@ -36,7 +36,14 @@ def remove_stopwords(text: str) -> str:
     Remove common English stopwords (e.g. 'the', 'is', 'for').
     """
     words = text.split()
-    filtered = [w for w in words if w not in STOPWORDS]
+    # ['quality', 'issue', 'with', 'order', 'the', 'oranges', 'show', 'signs']
+
+    # filtered = [w for w in words if w not in STOPWORDS]
+    # explicit version of the above list comprehension, for clarity:
+    filtered = []
+    for w in words:
+        if w not in STOPWORDS:
+            filtered.append(w)
     return " ".join(filtered)
 
 
