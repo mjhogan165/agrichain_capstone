@@ -53,4 +53,6 @@ Provide your severity rating and a brief reasoning."""
     # Step 4: write the result into state
     state["severity"] = result.severity
     state["severity_reasoning"] = result.reasoning
+    state["predicted_category"] = category
+
     return state
