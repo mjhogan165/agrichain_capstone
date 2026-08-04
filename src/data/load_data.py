@@ -14,8 +14,6 @@ Instead, everything imports `load_complaints()` from here.
 import pandas as pd
 from pathlib import Path
 
-# Path handling note: we use Path(__file__).parent instead of a hardcoded
-# string like "data/raw/..." because a hardcoded relative path only works
 # if you run the script from exactly one folder. Path(__file__) always
 # knows where THIS file lives, so it works no matter where you run it from.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]  # src/data -> src -> project root

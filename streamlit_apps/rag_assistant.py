@@ -1,13 +1,9 @@
 import streamlit as st
-import sys
+
 from pathlib import Path
 
 # Add project root to sys.path so `from src...` imports work,
 # regardless of where Streamlit's working directory happens to be
-project_root = Path(__file__).resolve().parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-
 from src.rag.retrieve import retrieve_relevant_documents
 from src.data.state import AgriChainState
 
