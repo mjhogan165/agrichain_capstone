@@ -1,0 +1,44 @@
+services:
+  # --- service 1: Complaint Classifier ---
+  classifier:
+    build: . # build from the Dockerfile in this folder
+    image: agrichain:latest # tag it the same way as our manual build
+    container_name: agrichain-classifier
+    command: streamlit run streamlit_apps/complaint_classifier.py --server.port=8501
+    ports:
+      - "8501:8501" # host:container
+    env_file:
+      - .env # injects OPENAI_API_KEY at runtime, not baked into image
+
+  # --- service 2: RAG Knowledge Assistant ---
+  rag_assistant:
+    build: .
+    image: agrichain:latest
+    container_name: agrichain-rag
+    command: streamlit run streamlit_apps/rag_assistant.py --server.port=8502
+    ports:
+      - "8502:8502"
+    env_file:
+      - .env
+
+  # --- service 3: EDA Dashboard ---
+  eda_dashboard:
+    build: .
+    image: agrichain:latest
+    container_name: agrichain-eda
+    command: streamlit run streamlit_apps/eda_dashboard.py --server.port=8503
+    ports:
+      - "8503:8503"
+    env_file:
+      - .env
+
+  # --- service 4: Multi-Agent System ---
+  multi_agent:
+    build: .
+    image: agrichain:latest
+    container_name: agrichain-multi-agent
+    command: streamlit run streamlit_apps/multi_agent_system.py --server.port=8504
+    ports:
+      - "8504:8504"
+    env_file:
+      - .env
