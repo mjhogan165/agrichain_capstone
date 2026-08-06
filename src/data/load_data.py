@@ -14,8 +14,7 @@ Instead, everything imports `load_complaints()` from here.
 import pandas as pd
 from pathlib import Path
 
-# if you run the script from exactly one folder. Path(__file__) always
-# knows where THIS file lives, so it works no matter where you run it from.
+#  so it works no matter where you run it from.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]  # src/data -> src -> project root
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw"
 

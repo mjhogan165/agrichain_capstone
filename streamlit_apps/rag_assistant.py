@@ -2,8 +2,6 @@ import streamlit as st
 
 from pathlib import Path
 
-# Add project root to sys.path so `from src...` imports work,
-# regardless of where Streamlit's working directory happens to be
 from src.rag.retrieve import retrieve_relevant_documents
 from src.data.state import AgriChainState
 

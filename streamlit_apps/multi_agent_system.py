@@ -15,8 +15,9 @@ if st.button("Process Complaint"):
         st.write(f"**Severity:** {result.get('severity', 'N/A')}")
         st.write(result.get("severity_reasoning", ""))
 
-        # your turn — sections for retrieved documents, resolution plan,
-        # customer response, and escalation status
+        st.header("Category")
+        st.write(f"**Predicted category:** {result.get('predicted_category', 'N/A')}")
+
         st.header("Retrieved Documents")
         for doc in result.get("retrieved_documents", []):
             st.write(f"- {doc.get('doc_id', 'N/A')}")

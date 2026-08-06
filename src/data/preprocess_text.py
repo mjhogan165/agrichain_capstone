@@ -1,10 +1,3 @@
-"""
-preprocess_text.py
--------------------
-Task 1: Text preprocessing for complaint_text, as required by the
-project instructions - normalization and stopword removal.
-"""
-
 import string
 import nltk
 from nltk.corpus import stopwords, words
@@ -38,8 +31,6 @@ def remove_stopwords(text: str) -> str:
     words = text.split()
     # ['quality', 'issue', 'with', 'order', 'the', 'oranges', 'show', 'signs']
 
-    # filtered = [w for w in words if w not in STOPWORDS]
-    # explicit version of the above list comprehension, for clarity:
     filtered = []
     for w in words:
         if w not in STOPWORDS:

@@ -7,7 +7,7 @@ from src.agents.planner import plan_resolution
 from src.agents.communicator import draft_customer_response
 from src.agents.escalation_manager import identify_escalation
 
-# Build the graph, telling it what shape of state flows through
+# Build the graph
 graph = StateGraph(AgriChainState)
 
 # Register each function as a node
@@ -25,5 +25,5 @@ graph.add_edge("planner", "communicator")
 graph.add_edge("communicator", "escalation_manager")
 graph.add_edge("escalation_manager", END)
 
-# Compile it into something runnable
+# Compile it
 app = graph.compile()

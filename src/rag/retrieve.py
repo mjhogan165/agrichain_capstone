@@ -13,7 +13,7 @@ embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 faiss_index = FAISS.load_local(
     FAISS_INDEX_PATH,
     embeddings=embedding_model,
-    allow_dangerous_deserialization=True,  # LangChain requires this explicit opt-in to unpickle a local index
+    allow_dangerous_deserialization=True,  # LangChain requires this
 )
 
 

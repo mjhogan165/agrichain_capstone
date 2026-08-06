@@ -1,9 +1,6 @@
 import streamlit as st
 from pathlib import Path
 
-# Add project root to sys.path so `from src...` imports work,
-# regardless of where Streamlit's working directory happens to be
-
 from src.models.classify import predict_category
 
 st.title("AgriChain Complaint Classifier")

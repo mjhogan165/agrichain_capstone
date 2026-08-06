@@ -60,8 +60,6 @@ monthly_counts.plot(kind="line", marker="o", ax=ax)
 ax.set_title("Complaint Volume Over Time (Monthly)")
 ax.set_xlabel("Month")
 ax.set_ylabel("Number of Complaints")
-ax.set_ylim(
-    bottom=0
-)  # keep this from Task 1 — forces y-axis to start at 0, avoids a misleading trend line
+ax.set_ylim(bottom=0)
 plt.tight_layout()
 st.pyplot(fig)

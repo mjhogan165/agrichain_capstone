@@ -1,0 +1,113 @@
+[
+  {
+    "complaint_id": "CMP-000014",
+    "complaint_text": "Order ORD-891930 contains cucumbers that are already showing signs of spoilage upon arrival.",
+    "severity": "high",
+    "actual_severity": "critical",
+    "predicted_category": "Quality Issues",
+    "actual_category": "Quality Issues",
+    "resolution_plan": {
+      "plan_summary": "To address the customer's complaint regarding spoilage of cucumbers in order ORD-891930, we will initiate a refund process, investigate the supplier's quality control measures, and implement stricter quality checks for future orders. Additionally, we will consider switching to a higher-rated supplier to ensure better product quality.",
+      "steps": [
+        "Initiate a full refund for order ORD-891930 to compensate the customer for the spoiled cucumbers.",
+        "Contact the supplier (SUP-6668) to report the issue and request an explanation regarding the quality of the cucumbers delivered.",
+        "Review the quality control processes of the current supplier (SUP-6668) to identify any lapses that may have led to the spoilage.",
+        "Evaluate alternative suppliers with higher quality scores, such as SUP-8400 (92/100) and SUP-12344 (85/100), for future orders to ensure better product quality.",
+        "Implement a more rigorous quality inspection process for incoming shipments, including temperature checks and visual inspections for spoilage.",
+        "Communicate with the customer to inform them of the actions being taken and assure them that their feedback is valued and will lead to improvements."
+      ]
+    },
+    "customer_response": "Subject: Your Order ORD-891930 - Immediate Action Taken\n\nDear [Customer's Name],\n\nThank you for reaching out to us regarding your recent order (ORD-891930) containing cucumbers that arrived in less than satisfactory condition. We sincerely apologize for the inconvenience this has caused you.\n\nWe take such matters very seriously, and your feedback is invaluable in helping us improve our services. To address your concerns, we have initiated a full refund for your order, which you should see reflected in your account shortly.\n\nAdditionally, we are taking the following steps to ensure that this issue does not happen again:\n1. We will contact our supplier to report the spoilage and seek an explanation regarding their quality control measures.\n2. A thorough review of the supplier's quality control processes will be conducted to identify any lapses that may have contributed to this issue.\n3. We are evaluating alternative suppliers with higher quality ratings to ensure that we provide you with the best products possible in the future.\n4. We will implement stricter quality inspections for all incoming shipments, including temperature checks and visual inspections for spoilage.\n\nWe appreciate your understanding and patience as we work to resolve this matter. Your satisfaction is our top priority, and we are committed to making the necessary improvements to serve you better.\n\nIf you have any further questions or concerns, please do not hesitate to reach out. Thank you for being a valued customer.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Company Name]  \n[Contact Information]",
+    "escalation_needed": false,
+    "escalation_reason": ""
+  },
+  {
+    "complaint_id": "CMP-000040",
+    "complaint_text": "Order ORD-583298 completely ruined. carrots arrived in terrible condition, cannot be sold.",
+    "severity": "high",
+    "actual_severity": "critical",
+    "predicted_category": "Damaged Goods",
+    "actual_category": "Damaged Goods",
+    "resolution_plan": {
+      "plan_summary": "The resolution plan addresses the customer's complaint regarding the poor condition of the carrots in order ORD-583298. It includes immediate actions to rectify the situation, compensation for the customer, and long-term measures to improve supplier quality and delivery processes.",
+      "steps": [
+        "Contact the customer to acknowledge the complaint and express regret for the inconvenience caused.",
+        "Initiate a return process for the damaged carrots and arrange for a replacement order from a more reliable supplier.",
+        "Offer the customer a discount or credit on their next order as compensation for the inconvenience.",
+        "Investigate the quality issues with the current supplier (SUP-11188) and assess their recent performance to determine if they should be retained for future orders.",
+        "Consider switching to Supplier SUP-12650, who has a higher reliability rating and shorter lead time, for future carrot orders to ensure better quality and timely delivery.",
+        "Implement a quality assurance check for all incoming orders, especially for high-severity complaints, to prevent similar issues in the future.",
+        "Review and update supplier contracts to include stricter quality control measures and penalties for poor performance."
+      ]
+    },
+    "customer_response": "Subject: Apology and Resolution for Your Recent Order Issue\n\nDear [Customer's Name],\n\nThank you for reaching out to us regarding your recent order (ORD-583298). I sincerely apologize for the condition in which the carrots arrived. We understand how important it is for you to receive quality products, and I regret that we fell short in this instance.\n\nTo address your concerns, we are taking the following steps:\n1. **Immediate Acknowledgment**: We acknowledge the inconvenience this has caused you and appreciate your patience as we work to resolve it.\n2. **Return and Replacement**: We will initiate a return process for the damaged carrots and arrange for a replacement order from a more reliable supplier to ensure you receive fresh and sellable products.\n3. **Compensation**: As a gesture of goodwill, we would like to offer you a discount or credit on your next order. We hope this will help make up for the inconvenience you experienced.\n4. **Supplier Review**: We are currently investigating the quality issues with our current supplier and assessing their recent performance. We are also considering switching to a more reliable supplier who has a proven track record for quality and timely delivery.\n5. **Quality Assurance Measures**: Moving forward, we will implement stricter quality assurance checks for all incoming orders, especially in cases of high-severity complaints, to prevent similar issues from occurring in the future.\n6. **Contract Updates**: We will review and update our supplier contracts to include stricter quality control measures and penalties for poor performance.\n\nYour satisfaction is our top priority, and we are committed to ensuring that you receive the quality products you expect from us. Please let us know if there is anything else we can do to assist you further.\n\nThank you for your understanding and for giving us the opportunity to make this right.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Company Name]  \n[Contact Information]",
+    "escalation_needed": false,
+    "escalation_reason": ""
+  },
+  {
+    "complaint_id": "CMP-000031",
+    "complaint_text": "Paperwork for shipment ORD-985029 has wrong product codes. This is delaying our processing.",
+    "severity": "medium",
+    "actual_severity": "critical",
+    "predicted_category": "Documentation Error",
+    "actual_category": "Documentation Error",
+    "resolution_plan": {
+      "plan_summary": "The resolution plan addresses the incorrect product codes in shipment ORD-985029 by identifying the errors, generating corrected paperwork, and ensuring timely delivery to the customer. Additionally, measures will be implemented to prevent future occurrences of similar issues.",
+      "steps": [
+        "Identify the specific incorrect product codes in the shipment paperwork for ORD-985029.",
+        "Generate corrected versions of the shipment documents within 4 hours of identifying the errors.",
+        "Send the corrected documents digitally to the customer and via courier to ensure they receive them promptly.",
+        "Coordinate with the customs broker if necessary to ensure that the corrected paperwork meets all regulatory requirements.",
+        "Review the current documentation process to identify gaps that led to the error and update the process to prevent recurrence, including adding a checklist for future shipments."
+      ]
+    },
+    "customer_response": "Subject: Resolution for Shipment ORD-985029\n\nDear [Customer's Name],\n\nThank you for bringing the issue with the paperwork for shipment ORD-985029 to our attention. We sincerely apologize for the inconvenience caused by the incorrect product codes, and we understand how this delay can impact your processing.\n\nTo address this matter promptly, we have developed a resolution plan that includes the following steps:\n\n1. **Identify Errors**: We will first identify the specific incorrect product codes in the shipment paperwork.\n2. **Generate Corrected Documents**: Once the errors are identified, we will generate corrected versions of the shipment documents within the next 4 hours.\n3. **Timely Delivery**: The corrected documents will be sent to you digitally and via courier to ensure you receive them as quickly as possible.\n4. **Coordination with Customs**: If necessary, we will coordinate with our customs broker to ensure that the corrected paperwork meets all regulatory requirements.\n5. **Process Review**: Finally, we will review our current documentation process to identify any gaps that led to this error. We will implement a checklist for future shipments to prevent similar issues from occurring.\n\nWe value your business and appreciate your understanding as we work to resolve this issue. If you have any further questions or need additional assistance, please do not hesitate to reach out.\n\nThank you for your patience and support.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Company Name]  \n[Contact Information]",
+    "escalation_needed": false,
+    "escalation_reason": ""
+  },
+  {
+    "complaint_id": "CMP-000046",
+    "complaint_text": "Poor service experience with shipment ORD-310394. Staff was unhelpful and dismissive.",
+    "severity": "medium",
+    "actual_severity": "medium",
+    "predicted_category": "Service Complaint",
+    "actual_category": "Service Complaint",
+    "resolution_plan": {
+      "plan_summary": "To address the customer's complaint regarding poor service experience with shipment ORD-310394, we will take immediate action to investigate the incident, provide compensation, and implement training for staff to improve service quality.",
+      "steps": [
+        "Acknowledge the complaint and apologize to the customer for their poor experience.",
+        "Investigate the incident by speaking with the staff involved and their supervisor to understand the context of the unhelpful behavior.",
+        "Provide immediate service recovery by offering the customer a credit of $100 as compensation for their inconvenience.",
+        "Ensure that a different staff member is assigned to handle the customer's account moving forward to restore trust.",
+        "Conduct a training session for the staff on customer service best practices to prevent similar issues in the future.",
+        "Follow up with the customer after the resolution to ensure their satisfaction and gather feedback on the service recovery process."
+      ]
+    },
+    "customer_response": "Subject: Our Apologies and Commitment to Improve Your Experience\n\nDear [Customer's Name],\n\nThank you for reaching out to us regarding your recent experience with shipment ORD-310394. We sincerely apologize for the poor service you encountered and for any frustration it may have caused. Your feedback is invaluable to us, and we take your concerns very seriously.\n\nTo address the issues you faced, we are taking the following steps:\n1. **Investigation**: We will investigate the incident by speaking with the staff involved and their supervisor to understand the context of the unhelpful behavior you experienced.\n2. **Compensation**: As a gesture of goodwill and to compensate for your inconvenience, we would like to offer you a credit of $100 on your account.\n3. **Account Management**: Moving forward, we will assign a different staff member to handle your account to ensure you receive the support you deserve.\n4. **Staff Training**: We are committed to improving our service quality. Therefore, we will conduct a training session for our staff on customer service best practices to prevent similar issues in the future.\n5. **Follow-Up**: After we implement these changes, we will follow up with you to ensure your satisfaction and gather your feedback on our service recovery process.\n\nWe value your business and are dedicated to restoring your trust in us. If you have any further questions or concerns, please do not hesitate to reach out.\n\nThank you for your understanding and patience as we work to improve your experience.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Company Name]  \n[Contact Information]",
+    "escalation_needed": false,
+    "escalation_reason": ""
+  },
+  {
+    "complaint_id": "CMP-000018",
+    "complaint_text": "My order #ORD-767153 was supposed to arrive on 2025-10-28 but it's now 6 days late. This is unacceptable for perishable goods.",
+    "severity": "high",
+    "actual_severity": "medium",
+    "predicted_category": "Delivery Delay",
+    "actual_category": "Delivery Delay",
+    "resolution_plan": {
+      "plan_summary": "To address the customer's complaint regarding the late delivery of order #ORD-767153, we will track the shipment, provide an updated estimated time of arrival (ETA), offer a discount for the inconvenience, and implement measures to improve future delivery reliability.",
+      "steps": [
+        "Contact the logistics partner immediately to track the current location of order #ORD-767153 and determine the cause of the delay.",
+        "Provide the customer with an updated ETA for their order as soon as the information is available.",
+        "If the delay exceeds 3 days, offer the customer a 10% discount on their next order as a goodwill gesture for the inconvenience caused.",
+        "Communicate with the customer to apologize for the delay and reassure them that we are taking steps to resolve the issue promptly.",
+        "If the delay extends beyond 7 days, escalate the issue to the operations manager for further investigation and resolution.",
+        "Review the performance of the logistics partner to identify any recurring issues that may have contributed to the delay and address them accordingly.",
+        "Implement a more robust tracking system for perishable goods to ensure timely updates and proactive communication with customers in the future."
+      ]
+    },
+    "customer_response": "Subject: Update on Your Order #ORD-767153\n\nDear [Customer's Name],\n\nThank you for reaching out to us regarding your order #ORD-767153. I sincerely apologize for the delay in delivery, which is currently 6 days late. I understand how critical timely delivery is for perishable goods, and I appreciate your patience during this time.\n\nTo address your concerns, we are taking immediate action:\n1. We are contacting our logistics partner to track the current location of your order and determine the cause of the delay. \n2. As soon as we have an updated estimated time of arrival (ETA), we will inform you right away.\n3. To compensate for the inconvenience caused, we would like to offer you a 10% discount on your next order, should the delay exceed 3 days.\n4. We are committed to resolving this issue promptly and will keep you updated throughout the process.\n5. Additionally, we will review our logistics performance to prevent similar issues in the future and enhance our tracking system for perishable goods.\n\nWe value your business and are dedicated to ensuring your satisfaction. Please feel free to reach out if you have any further questions or concerns.\n\nThank you for your understanding.\n\nBest regards,\n\n[Your Name]  \n[Your Position]  \n[Company Name]  \n[Contact Information]",
+    "escalation_needed": false,
+    "escalation_reason": ""
+  }
+]
