@@ -2,8 +2,8 @@ import pickle
 from pathlib import Path
 
 import numpy as np
+from langchain_community.embeddings import SentenceTransformerEmbeddings  # moved up
 from tensorflow import keras
-from langchain_community.embeddings import SentenceTransformerEmbeddings
 
 # Compute paths relative to this file's own location
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent

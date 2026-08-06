@@ -17,45 +17,57 @@ def plot_bar_chart(counts, title, xlabel, ylabel):
     ax.set_ylabel(ylabel)
     plt.xticks(rotation=45)
     plt.tight_layout()
+    return fig
+
+
+# Row 1
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header("Complaints by Category")
+    category_counts = train_df["category"].value_counts()
+    fig = plot_bar_chart(
+        category_counts,
+        "Complaint Volume by Category",
+        "Category",
+        "Number of Complaints",
+    )
     st.pyplot(fig)
 
+with col2:
+    st.header("Complaints by Region")
+    region_counts = train_df["region"].value_counts()
+    fig = plot_bar_chart(
+        region_counts, "Complaint Volume by Region", "Region", "Number of Complaints"
+    )
+    st.pyplot(fig)
 
-st.header("Complaints by Category")
-category_counts = train_df["category"].value_counts()
-plot_bar_chart(
-    category_counts, "Complaint Volume by Category", "Category", "Number of Complaints"
-)
+# Row 2
+col3, col4 = st.columns(2)
 
-st.header("Complaints by Region")
-region_counts = train_df["region"].value_counts()
-plot_bar_chart(
-    region_counts, "Complaint Volume by Region", "Region", "Number of Complaints"
-)
+with col3:
+    st.header("Complaints by Channel")
+    channel_counts = train_df["channel"].value_counts()
+    fig = plot_bar_chart(
+        channel_counts, "Complaint Volume by Channel", "Channel", "Number of Complaints"
+    )
+    st.pyplot(fig)
 
-st.header("Complaints by Channel")
-channel_counts = train_df["channel"].value_counts()
-plot_bar_chart(
-    channel_counts, "Complaint Volume by Channel", "Channel", "Number of Complaints"
-)
+with col4:
+    st.header("Complaints by Priority")
+    priority_counts = train_df["priority"].value_counts()
+    fig = plot_bar_chart(
+        priority_counts,
+        "Complaint Volume by Priority",
+        "Priority",
+        "Number of Complaints",
+    )
+    st.pyplot(fig)
 
-st.header("Complaints by Priority")
-priority_counts = train_df["priority"].value_counts()
-plot_bar_chart(
-    priority_counts, "Complaint Volume by Priority", "Priority", "Number of Complaints"
-)
-
-st.header("Complaints by Product Category")
-product_category_counts = train_df["category"].value_counts()
-plot_bar_chart(
-    product_category_counts,
-    "Complaint Volume by Product Category",
-    "Product Category",
-    "Number of Complaints",
-)
-
+#  Row 3
 st.header("Complaints by Month")
 monthly_counts = train_df.set_index("timestamp").resample("ME").size()
-fig, ax = plt.subplots(figsize=(10, 5))
+fig, ax = plt.subplots(figsize=(10, 4))
 monthly_counts.plot(kind="line", marker="o", ax=ax)
 ax.set_title("Complaint Volume Over Time (Monthly)")
 ax.set_xlabel("Month")

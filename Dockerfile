@@ -33,7 +33,8 @@ COPY data/ ./data/
 # traffic from outside the container can actually reach it.
 ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-
+ENV KMP_DUPLICATE_LIB_OK=TRUE
+ENV OMP_NUM_THREADS=1
 # Documents which ports this image is meant to serve on (informational -
 # actual publishing to your machine happens in docker-compose, next step).
 EXPOSE 8501 8502 8503 8504
