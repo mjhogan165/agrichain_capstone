@@ -2,7 +2,7 @@ from src.data.state import AgriChainState
 
 
 def identify_escalation(state: AgriChainState) -> AgriChainState:
-    """Escalation Manager: decides whether a case needs human review."""
+    """Escalation Manager, decides if a case needs human review."""
 
     severity = state.get("severity", "")
     error_message = state.get("error_message", "")

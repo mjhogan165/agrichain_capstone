@@ -21,19 +21,19 @@ with open(LABEL_ENCODER_PATH, "rb") as f:
 def predict_category(complaint_text: str) -> str:
     """Predicts the complaint category using the trained ANN classifier."""
 
-    # 1. Turn the raw text into a 384-number vector
+    # Turn the raw text into a 384-number vector
     embedding = embedding_model.embed_query(complaint_text)
 
-    # 2. Keras expects a batch of inputs, so we wrap the single embedding in a 2D array
+    # Wrap the single embedding in a 2D array
     embedding_batch = np.array([embedding])
 
-    # 3. Run the trained network
+    # Run the trained network
     probabilities = classifier_model.predict(embedding_batch)
 
-    # 4. Find which of the 8 positions has the highest probability
+    # Find which has the highest probability
     predicted_index = np.argmax(probabilities[0])
 
-    # 5. Turn that index back into an actual category name
+    # Turn that index back into a category name
     category = label_encoder.inverse_transform([predicted_index])[0]
 
     return category

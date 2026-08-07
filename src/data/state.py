@@ -2,6 +2,9 @@ from typing import TypedDict
 
 
 class AgriChainState(TypedDict, total=False):
+    """
+    State dictionary for the AgriChain complaint resolution process.
+    """
 
     complaint_text: str
     predicted_category: str

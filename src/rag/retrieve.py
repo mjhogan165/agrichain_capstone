@@ -4,7 +4,6 @@ from pathlib import Path
 import time
 
 # __file__ = the path to this retrieve.py file itself
-# .parent three times: rag/ -> src/ -> project root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 FAISS_INDEX_PATH = str(PROJECT_ROOT / "models" / "faiss_knowledge_base")
 
@@ -18,6 +17,8 @@ faiss_index = FAISS.load_local(
 
 
 def retrieve_relevant_documents(state: AgriChainState) -> AgriChainState:
+    """Retrieves relevant knowledge base documents for the complaint using FAISS vector search."""
+
     start = time.time()
     complaint_text = state.get("complaint_text", "")
     results = faiss_index.similarity_search_with_score(complaint_text, k=5)

@@ -1,4 +1,3 @@
-# src/agents/analyzer.py
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -8,7 +7,7 @@ from src.data.state import AgriChainState
 
 
 class ResolutionPlan(BaseModel):
-    """Structured output schema for the Planner agent's LLM call."""
+    """Schema for the Planner agent's LLM call."""
 
     plan_summary: str = Field(description="A summary of the resolution plan")
     steps: list[str] = Field(
@@ -21,13 +20,13 @@ structured_llm = llm.with_structured_output(ResolutionPlan)
 
 
 def plan_resolution(state: AgriChainState) -> AgriChainState:
-    """Planner agent: generates a resolution plan based on the complaint, severity, and retrieved documents."""
+    """Planner agent, generates a resolution plan from the complaint, severity, and retrieved documents."""
 
     severity = state.get("severity", "")
     retrieved_documents = state.get("retrieved_documents", [])
     complaint_text = state.get("complaint_text", "")
 
-    # Step 1: build a prompt combining the complaint text, severity, and retrieved documents
+    #  Build a prompt combining the complaint text, severity, and retrieved documents
     prompt = f"""You are tasked with creating a resolution plan for a customer complaint in an agricultural supply chain company.
 Complaint text: "{complaint_text}"
 Complaint severity: {severity}
@@ -39,7 +38,8 @@ Given the severity of the complaint and the information from the retrieved docum
     assert isinstance(
         result, ResolutionPlan
     )  # we know this, because we passed a Pydantic schema in
-    # Step 2: write the result into state
+
+    # Write the result into state
     result_dict = {
         "plan_summary": result.plan_summary,
         "steps": result.steps,

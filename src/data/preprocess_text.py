@@ -2,9 +2,7 @@ import string
 import nltk
 from nltk.corpus import stopwords, words
 
-# NLTK's stopword list needs to be downloaded once per machine - this
-# checks if it's already there first, so it doesn't re-download every
-# time this file gets imported.
+# Checks if the NLTK stopword list is already downloaded, and if not, downloads it.
 try:
     nltk.data.find("corpora/stopwords")
 except LookupError:
@@ -15,8 +13,7 @@ STOPWORDS = set(stopwords.words("english"))
 
 def normalize_text(text: str) -> str:
     """
-    Basic text normalization: lowercase + strip punctuation + collapse
-    extra whitespace.
+    Text normalization: lowercase, strip punctuation, and removes extra whitespace.
     """
     text = text.lower()
     text = text.translate(str.maketrans("", "", string.punctuation))
@@ -25,9 +22,6 @@ def normalize_text(text: str) -> str:
 
 
 def remove_stopwords(text: str) -> str:
-    """
-    Remove common English stopwords (e.g. 'the', 'is', 'for').
-    """
     words = text.split()
     # ['quality', 'issue', 'with', 'order', 'the', 'oranges', 'show', 'signs']
 

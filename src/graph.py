@@ -17,7 +17,7 @@ graph.add_node("planner", plan_resolution)
 graph.add_node("communicator", draft_customer_response)
 graph.add_node("escalation_manager", identify_escalation)
 
-# Wire them in sequence
+# Sequence
 graph.set_entry_point("analyzer")
 graph.add_edge("analyzer", "investigator")
 graph.add_edge("investigator", "planner")

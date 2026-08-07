@@ -14,7 +14,7 @@ structured_llm = llm.with_structured_output(CustomerResponse)
 
 
 def draft_customer_response(state: AgriChainState) -> AgriChainState:
-    """Drafts a customer response based on the complaint, severity, and resolution plan."""
+    """Communicator Agent, drafts a customer response from the complaint, severity, and resolution plan."""
 
     severity = state.get("severity", "")
     resolution_plan = state.get("resolution_plan", {})
@@ -28,7 +28,7 @@ def draft_customer_response(state: AgriChainState) -> AgriChainState:
         )
         return state
 
-    # Step 1: build a prompt combining the complaint text, severity, and resolution plan
+    # Build a prompt combining the complaint text, severity, and resolution plan
     prompt = f"""You are tasked with drafting a customer response for a complaint in an agricultural supply chain company.
 Complaint text: "{complaint_text}"
 Complaint severity: {severity}

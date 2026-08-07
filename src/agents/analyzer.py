@@ -9,7 +9,7 @@ from src.models.classify import predict_category
 
 
 class SeverityAssessment(BaseModel):
-    """Structured output schema for the Analyzer agent's LLM call."""
+    """Output schema for the Analyzer agent's LLM call."""
 
     severity: Literal["low", "medium", "high", "critical"] = Field(
         description="The assessed severity of the complaint"
@@ -24,7 +24,7 @@ structured_llm = llm.with_structured_output(SeverityAssessment)
 
 
 def analyze_severity(state: AgriChainState) -> AgriChainState:
-    """Analyzer agent: predicts category, then uses it + the complaint text to assess severity."""
+    """Analyzer agent. Predicts category, then uses it with the complaint text to assess severity."""
 
     complaint_text = state.get("complaint_text", "")
 
