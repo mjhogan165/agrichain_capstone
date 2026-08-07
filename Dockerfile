@@ -12,6 +12,9 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
+# --- Install CPU-only torch first, so pip doesn't pull the CUDA build
+# from requirements.txt (this container has no GPU access anyway) ---
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
 
 # --- Dependency layer (changes rarely -> cached most of the time) ---
 COPY requirements-docker.txt requirements.txt
@@ -35,6 +38,7 @@ ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 ENV KMP_DUPLICATE_LIB_OK=TRUE
 ENV OMP_NUM_THREADS=1
+ENV STREAMLIT_SERVER_FILE_WATCHER_TYPE=none
 # Documents which ports this image is meant to serve on (informational -
 # actual publishing to your machine happens in docker-compose, next step).
 EXPOSE 8501 8502 8503 8504

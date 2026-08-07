@@ -2,7 +2,6 @@ import pickle
 from pathlib import Path
 
 import numpy as np
-from langchain_community.embeddings import SentenceTransformerEmbeddings  # moved up
 from tensorflow import keras
 
 # Compute paths relative to this file's own location
@@ -11,9 +10,9 @@ CLASSIFIER_PATH = PROJECT_ROOT / "models" / "complaint_classifier.keras"
 LABEL_ENCODER_PATH = PROJECT_ROOT / "models" / "label_encoder.pkl"
 
 # Load everything ONCE, when this file is first imported, not inside the function
-embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-classifier_model = keras.models.load_model(str(CLASSIFIER_PATH))
+from src.models.embeddings import embedding_model
 
+classifier_model = keras.models.load_model(str(CLASSIFIER_PATH))
 
 with open(LABEL_ENCODER_PATH, "rb") as f:
     label_encoder = pickle.load(f)

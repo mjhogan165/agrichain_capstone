@@ -1,6 +1,5 @@
 from src.data.state import AgriChainState
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import SentenceTransformerEmbeddings
 from pathlib import Path
 import time
 
@@ -9,7 +8,8 @@ import time
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 FAISS_INDEX_PATH = str(PROJECT_ROOT / "models" / "faiss_knowledge_base")
 
-embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+from src.models.embeddings import embedding_model
+
 faiss_index = FAISS.load_local(
     FAISS_INDEX_PATH,
     embeddings=embedding_model,
