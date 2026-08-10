@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class CustomerResponse(BaseModel):
-    """Structured output schema for the Communicator agent's LLM call."""
+    """Output schema for the Communicator Agent"""
 
     response: str = Field(description="The drafted customer response")
 
@@ -14,7 +14,7 @@ structured_llm = llm.with_structured_output(CustomerResponse)
 
 
 def draft_customer_response(state: AgriChainState) -> AgriChainState:
-    """Communicator Agent, drafts a customer response from the complaint, severity, and resolution plan."""
+    """Communicator Agent, drafts a customer response"""
 
     severity = state.get("severity", "")
     resolution_plan = state.get("resolution_plan", {})
@@ -28,14 +28,12 @@ def draft_customer_response(state: AgriChainState) -> AgriChainState:
         )
         return state
 
-    # Build a prompt combining the complaint text, severity, and resolution plan
     prompt = f"""You are tasked with drafting a customer response for a complaint in an agricultural supply chain company.
 Complaint text: "{complaint_text}"
 Complaint severity: {severity}
 Resolution plan: {resolution_plan}
 
-Draft a professional and empathetic response to the customer, addressing their concerns and outlining the steps that will be taken to resolve the issue. Ensure the response is clear, concise, and provides the customer with a sense of being heard and valued.
-    """
+Write a short, professional reply to the customer. Acknowledge their issue, explain what will be done to fix it, and keep the tone polite."""
 
     result = structured_llm.invoke(prompt)
     state["customer_response"] = result.response  # type: ignore
