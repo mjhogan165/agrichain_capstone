@@ -3,7 +3,7 @@ from typing import TypedDict
 
 class AgriChainState(TypedDict, total=False):
     """
-    State dictionary for the AgriChain complaint resolution process.
+    State dictionary for the Multi Agent pipeline.
     """
 
     complaint_text: str

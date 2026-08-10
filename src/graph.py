@@ -25,5 +25,5 @@ graph.add_edge("planner", "communicator")
 graph.add_edge("communicator", "escalation_manager")
 graph.add_edge("escalation_manager", END)
 
-# Compile it
+# Compile
 app = graph.compile()

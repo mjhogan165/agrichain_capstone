@@ -4,7 +4,7 @@ from pathlib import Path
 from src.models.classify import predict_category
 
 st.title("AgriChain Complaint Classifier")
-st.write("Enter a complaint below to see its predicted category.")
+st.write("Enter a complaint to see its predicted category.")
 
 complaint_text = st.text_area("Complaint text")
 
@@ -13,4 +13,4 @@ if st.button("Classify"):
         category = predict_category(complaint_text)
         st.success(f"Predicted category: {category}")
     else:
-        st.warning("Please enter some complaint text first.")
+        st.warning("Please enter a complaint text.")

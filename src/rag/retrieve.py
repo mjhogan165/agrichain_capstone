@@ -3,7 +3,6 @@ from langchain_community.vectorstores import FAISS
 from pathlib import Path
 import time
 
-# __file__ = the path to this retrieve.py file itself
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 FAISS_INDEX_PATH = str(PROJECT_ROOT / "models" / "faiss_knowledge_base")
 

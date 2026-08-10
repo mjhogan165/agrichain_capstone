@@ -37,7 +37,7 @@ if st.button("Process Complaint"):
 
         st.header("Escalation Status")
         if result.get("escalate"):
-            st.error(f"⚠️ Escalation needed: {result.get('escalation_reason', 'N/A')}")
+            st.error(f"Escalation needed: {result.get('escalation_reason', 'N/A')}")
         else:
             st.success("No escalation needed.")
     else:
