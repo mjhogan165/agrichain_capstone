@@ -4,14 +4,13 @@ from pathlib import Path
 import numpy as np
 from tensorflow import keras
 
-# Compute paths relative to this file's own location
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CLASSIFIER_PATH = PROJECT_ROOT / "models" / "complaint_classifier.keras"
 LABEL_ENCODER_PATH = PROJECT_ROOT / "models" / "label_encoder.pkl"
 
-# Load everything ONCE, when this file is first imported, not inside the function
 from src.models.embeddings import embedding_model
 
+# Loaded once at import time
 classifier_model = keras.models.load_model(str(CLASSIFIER_PATH))
 
 with open(LABEL_ENCODER_PATH, "rb") as f:
@@ -19,21 +18,13 @@ with open(LABEL_ENCODER_PATH, "rb") as f:
 
 
 def predict_category(complaint_text: str) -> str:
-    """Predicts the complaint category using the trained ANN classifier."""
+    """Predicts the category using the already trained ANN classifier."""
 
-    # Turn the raw text into a 384-number vector
     embedding = embedding_model.embed_query(complaint_text)
-
-    # Wrap the single embedding in a 2D array
     embedding_batch = np.array([embedding])
-
-    # Run the trained network
     probabilities = classifier_model.predict(embedding_batch)
-
-    # Find which has the highest probability
     predicted_index = np.argmax(probabilities[0])
 
-    # Turn that index back into a category name
     category = label_encoder.inverse_transform([predicted_index])[0]
 
     return category

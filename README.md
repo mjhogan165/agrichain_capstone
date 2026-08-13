@@ -1,6 +1,6 @@
 # AgriChain: AI Complaint Resolution for an Agricultural Supply Chain
 
-AgriChain takes in a customer complaint and runs it through a 5-agent pipeline. It figures out what kind of complaint it is and how serious it is, looks up relevant policy and past resolutions, comes up with a plan, drafts a response, and flags it if it needs a human to step in. Built as my capstone project for Fullstack Academy's AI/ML program.
+AgriChain takes in a customer complaint and runs it through a 5-agent pipeline. It figures out what kind of complaint it is and how serious it is, looks up relevant policy and past resolutions, comes up with a plan, drafts a response, and flags it if it needs supervisor sign-off or priority handling. Every complaint still goes to a human — escalation just changes how it's routed, not whether someone sees it. Built as my capstone project for Fullstack Academy's AI/ML program.
 
 ## What it does
 
@@ -12,6 +12,8 @@ Handling complaints manually is slow and inconsistent. Different people might cl
 4. **Plan** an actual resolution
 5. **Draft** a response a human could send
 6. **Flag** it for escalation if it's serious enough
+
+The Multi-Agent System app offers two ways in: a pre-triaged queue of complaints, sorted by severity and ready to click into, or a text box for a single new complaint that hasn't been seen before. The queue is fed by a batch script (`scripts/build_queue.py`) that runs the Analyzer agent ahead of time — the same batch logic could just as easily read from a real weekly complaint export instead of a fixed demo set, which is the natural next step.
 
 The end result is a structured report that a support or ops person would review before acting on it, since this isn't meant to auto-send anything to a customer on its own. Four Streamlit apps give different views into the system (see below).
 
@@ -31,7 +33,7 @@ Complaint → Analyzer → Investigator → Planner → Communicator → Escalat
 | **Communicator**       | Drafts the customer-facing response                            |
 | **Escalation Manager** | Flags the case if it's bad enough                              |
 
-The graph stays linear rather than using a conditional edge. `escalate` is just a boolean on the shared state, which keeps the graph itself simple and puts all the branching logic in one place: the Escalation Manager. Escalation only fires on `severity == "critical"`, not `"high"`, so it stays reserved for cases that actually need a person's attention right away instead of firing on every moderately bad complaint.
+The graph stays linear rather than using a conditional edge. `escalate` is just a boolean on the shared state, which keeps the graph itself simple and puts all the branching logic in one place: the Escalation Manager. Escalation only fires on `severity == "critical"`, not `"high"` — it's not "does a human review this" (every complaint gets reviewed regardless), it's "does this need to jump the queue or get a supervisor's sign-off before it goes out."
 
 ## Tech Stack
 
@@ -46,6 +48,7 @@ The graph stays linear rather than using a conditional edge. `escalate` is just 
 - `data/` — raw complaint/knowledge base data, plus processed embeddings and sample reports
 - `models/` — the trained classifier, label encoder, class weights, and FAISS index
 - `notebooks/` — the pipeline that built everything, run in order: explore the raw data, generate embeddings and train the classifier, build the FAISS knowledge base, then wire up and test the 5 agents. Each notebook loads data saved by the one before it rather than starting from scratch.
+- `scripts/` — `build_queue.py`, which runs the Analyzer agent on a batch of complaints ahead of time and writes the results to `data/processed/queue_results.json` for the Multi-Agent System app's queue view
 - `src/` — the actual application code: agents, state schema, classifier and retrieval helpers, the compiled graph
 - `streamlit_apps/` — the four Streamlit apps
 - `Dockerfile`, `docker-compose.yml`, `pyproject.toml`, `requirements.txt` — build and dependency config
@@ -65,7 +68,7 @@ The graph stays linear rather than using a conditional edge. `escalate` is just 
    ```
 2. Build and run all four apps:
    ```bash
-   docker compose up
+   docker compose up --build
    ```
 3. Open whichever app you want in your browser (ports below).
 
@@ -86,12 +89,12 @@ streamlit run streamlit_apps/multi_agent_system.py
 
 ## The Apps
 
-| App                     | Port   | What it's for                                                 |
-| ----------------------- | ------ | ------------------------------------------------------------- |
-| Complaint Classifier    | `8501` | Type in a complaint, see what category the ANN predicts       |
-| RAG Knowledge Assistant | `8502` | Search the SOP/resolution knowledge base directly             |
-| EDA Dashboard           | `8503` | Complaint trends by region, channel, time, priority           |
-| Multi-Agent System      | `8504` | The real thing. Submit a complaint and watch all 5 agents run |
+| App                     | Port   | What it's for                                                                                                                                                                                                              |
+| ----------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Complaint Classifier    | `8501` | Type in a complaint, see what category the ANN predicts                                                                                                                                                                    |
+| RAG Knowledge Assistant | `8502` | Search the SOP/resolution knowledge base directly                                                                                                                                                                          |
+| EDA Dashboard           | `8503` | Complaint trends by region, channel, time, priority                                                                                                                                                                        |
+| Multi-Agent System      | `8504` | A severity-sorted queue of precomputed complaints, plus a text box for a brand-new one — click into either to run the full 5-agent pipeline and see the draft reply, escalation status, resolution plan, and evidence used |
 
 ## Screenshots
 
@@ -105,7 +108,7 @@ streamlit run streamlit_apps/multi_agent_system.py
 ![EDA Dashboard](screenshots/eda_dashboard.png)
 
 **Multi-Agent System**
-![Multi-Agent System](screenshots/multi_agent_collage.png)
+![Multi-Agent System](screenshots/MARS_collage.png)
 
 ## Model Performance
 
@@ -120,7 +123,11 @@ A 100% test accuracy was unusual, so I checked for data leakage by looking for d
 
 ## Known Limitations
 
-**The knowledge base composition messes with retrieval.** Supplier profile documents make up about 73% of the knowledge base (200 of 274 docs), versus only 24 resolution guides and 50 SOPs. Since they're the overwhelming majority, the similarity search sometimes pulls back a supplier profile instead of the resolution guide you would want for customer resolution reports.
+**The knowledge base's composition skews retrieval toward supplier docs.** Supplier profile documents make up about 73% of the knowledge base (200 of 274 docs), versus only 24 resolution guides and 50 SOPs. A flat top-k similarity search consistently favored supplier docs — for some queries, no resolution guide appeared even in the top 30+ results.
+
+**Fix:** `retrieve_relevant_documents` now searches the full knowledge base and keeps the closest-matching document _per type_ (supplier_info, resolution_guide, sop), guaranteeing all three are available to the Planner and Communicator instead of letting raw similarity crowd any type out entirely.
+
+**Remaining tradeoff:** this guarantees _presence_, not _strength_ — if no resolution guide is genuinely close to a given complaint, the agent still gets the closest one available, which may be a weak match. The prompt now includes each document's relevance score with a plain-language confidence label (strong / moderate / weak match) and an explicit instruction not to present weak matches as certain, so the LLM is guided to treat low-confidence documents as background context rather than fact.
 
 ## Sample Output
 

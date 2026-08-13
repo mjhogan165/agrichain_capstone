@@ -1,6 +1,7 @@
 venv/
-Instructions for Agrichain.txt
-Capstone Project Submission Details.pdf
-agrichain_langgraph_workflow.png
 .env
 notes.md
+__pycache__/
+*.pyc
+presentation-reference/
+project-notes/

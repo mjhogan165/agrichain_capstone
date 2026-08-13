@@ -1,0 +1,79 @@
+[
+  {
+    "complaint_id": "CMP-000050",
+    "complaint_text": "Quality control failure on order ORD-347507. limes are contaminated and cannot be sold.",
+    "severity": "critical",
+    "severity_reasoning": "The complaint involves contaminated limes, which poses a significant health risk to consumers. This not only jeopardizes customer safety but also has the potential for severe financial repercussions due to product recalls and loss of sales. Additionally, the perishable nature of the product means that the issue needs immediate resolution to prevent further losses and damage to the company's reputation and customer relationships.",
+    "predicted_category": "Quality Issues"
+  },
+  {
+    "complaint_id": "SYN-000001",
+    "complaint_text": "We've had multiple customer reports of illness after purchasing apples from order ORD-449213. One customer was hospitalized. We need to know if this batch is contaminated immediately. This is a serious liability issue for us and we may need to pull the product from our shelves.",
+    "severity": "critical",
+    "severity_reasoning": "The complaint involves multiple reports of illness, including one hospitalization, which indicates a serious health risk associated with the product. This poses a significant liability for the company and necessitates immediate action to investigate potential contamination. The urgency is heightened by the perishable nature of the product, which could spoil before a resolution is reached, further complicating the situation and risking customer relationships.",
+    "predicted_category": "Quality Issues"
+  },
+  {
+    "complaint_id": "CMP-000005",
+    "complaint_text": "Damaged goods in shipment ORD-255544. Temperature control appears to have failed, cucumbers are spoiled.",
+    "severity": "high",
+    "severity_reasoning": "The complaint involves spoiled cucumbers due to a failure in temperature control, indicating a significant loss of perishable goods. This not only represents a financial loss but also poses a risk to customer satisfaction and trust. If not addressed quickly, it could lead to further spoilage and potential safety concerns, making it a high-severity issue.",
+    "predicted_category": "Damaged Goods"
+  },
+  {
+    "complaint_id": "CMP-000007",
+    "complaint_text": "Service quality is deteriorating. Multiple issues with order ORD-255130 and no one seems to care.",
+    "severity": "high",
+    "severity_reasoning": "The complaint indicates a significant issue with service quality, which could lead to delays in fulfilling orders, especially if they involve perishable goods. The mention of multiple issues with a specific order suggests a pattern of neglect that could impact the customer's operations and financial outcomes. Additionally, if the situation is not addressed promptly, it could damage the customer relationship, making this a high-severity issue.",
+    "predicted_category": "Service Complaint"
+  },
+  {
+    "complaint_id": "CMP-000009",
+    "complaint_text": "Order ORD-246195 is severely delayed. We needed these organic apples by 2025-10-31 for our retail operations.",
+    "severity": "high",
+    "severity_reasoning": "The delivery delay of organic apples is critical as they are perishable goods. The customer needed them by a specific date for retail operations, and a delay could lead to spoilage, financial loss, and potential damage to the customer relationship. The urgency and nature of the product elevate the severity of this complaint.",
+    "predicted_category": "Delivery Delay"
+  },
+  {
+    "complaint_id": "CMP-000011",
+    "complaint_text": "Received only partial order ORD-732471. Where are the remaining 29 raspberries?",
+    "severity": "high",
+    "severity_reasoning": "The complaint involves missing perishable items (raspberries), which could spoil quickly, impacting the customer's ability to use them. The financial value of the missing items could be significant, and failure to resolve this promptly may damage the customer relationship.",
+    "predicted_category": "Missing Items"
+  },
+  {
+    "complaint_id": "CMP-000022",
+    "complaint_text": "Shipment ORD-900681 arrived with crushed boxes. Multiple watermelons units are unsellable.",
+    "severity": "high",
+    "severity_reasoning": "The complaint involves damaged perishable goods (watermelons) that are unsellable, which poses a risk of spoilage and financial loss for the customer. Additionally, the damage to the shipment could negatively impact the customer relationship, as they may rely on these products for their business.",
+    "predicted_category": "Damaged Goods"
+  },
+  {
+    "complaint_id": "CMP-000008",
+    "complaint_text": "Terrible communication regarding shipment ORD-672675. No tracking updates, no responses to calls.",
+    "severity": "medium",
+    "severity_reasoning": "The complaint indicates poor communication regarding a shipment, which can lead to customer frustration and potential delays. While there is no immediate risk of spoilage or safety issues mentioned, the lack of tracking updates and unresponsiveness could harm the customer relationship and lead to financial implications if the shipment is critical. Therefore, the severity is assessed as medium.",
+    "predicted_category": "Poor Communication"
+  },
+  {
+    "complaint_id": "CMP-000010",
+    "complaint_text": "Paperwork for shipment ORD-919234 has wrong product codes. This is delaying our processing.",
+    "severity": "medium",
+    "severity_reasoning": "The documentation error is causing a delay in processing, which could impact the timely delivery of products. While there is a risk of perishable goods spoiling, the severity is not critical as it does not indicate an immediate safety risk or contamination issue. However, the potential for financial loss and damage to customer relationships elevates the severity to medium.",
+    "predicted_category": "Documentation Error"
+  },
+  {
+    "complaint_id": "CMP-000013",
+    "complaint_text": "Delivery driver for order ORD-417960 was extremely rude and unprofessional.",
+    "severity": "medium",
+    "severity_reasoning": "While the complaint about the delivery driver's rudeness is concerning and could impact customer satisfaction, it does not involve immediate risks to safety, spoilage of perishable goods, or significant financial loss. However, it could damage the customer relationship if not addressed, warranting a medium severity rating.",
+    "predicted_category": "Service Complaint"
+  },
+  {
+    "complaint_id": "SYN-000002",
+    "complaint_text": "Delivery for order ORD-118204 arrived about 20 minutes earlier than our scheduled window. Not a big deal, just wanted it noted so future deliveries stick closer to the window.",
+    "severity": "low",
+    "severity_reasoning": "The delivery arrived only 20 minutes earlier than scheduled, which is a minor issue that does not pose any risk to perishable goods or safety. It is unlikely to significantly impact the customer relationship, as the customer expressed that it was not a big deal.",
+    "predicted_category": "Delivery Delay"
+  }
+]
